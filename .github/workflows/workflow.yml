@@ -5,6 +5,7 @@ on:
     branches:
       - 'feature/*'
   pull_request:
+    types: [closed]
     branches:
       - 'release/*'
 
