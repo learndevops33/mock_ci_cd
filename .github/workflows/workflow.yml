@@ -4,12 +4,14 @@ on:
   push:
     branches:
       - 'feature/*'
+      - 'release/*'
+      - main
   pull_request:
     types: 
       - closed
     branches:
       - 'release/*'
-      - 'main'
+      - main
 
 jobs:
   build:
