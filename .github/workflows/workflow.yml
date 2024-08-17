@@ -1,7 +1,6 @@
 name: mock CI/CD
 
 on:
-  
   push:
     branches:
       - 'feature/*'
