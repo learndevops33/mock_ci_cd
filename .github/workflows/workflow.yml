@@ -12,8 +12,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: |
-      github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/') || 
-      (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.base.ref, 'refs/heads/release/'))
+       github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/') || 
+       (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.base.ref, 'refs/heads/release/'))
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
