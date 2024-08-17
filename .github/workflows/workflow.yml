@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - 'feature/*'
-  pull_request: 
-    branches: 
+  pull_request:
+    branches:
       - 'release/*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/') || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && github.base_ref == 'release/*') }}
+    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/') || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && github.base_ref == 'release/*') && github.event.action == 'closed' }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
