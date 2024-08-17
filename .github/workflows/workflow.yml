@@ -1,9 +1,12 @@
 name: mock CI/CD
 
 on:
+  
   push:
     branches:
       - 'feature/*'
+    paths-ignore:
+      - 'appfile.txt'
   pull_request:
     types: 
       - closed
