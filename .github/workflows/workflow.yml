@@ -22,17 +22,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Get commit message
+    - name: Get commit message and branch name
       run: |
-        echo "Commit message: $(git log -1 --pretty=%B)" > commit_message.txt
+        BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+        echo "Branch: $BRANCH_NAME" > commit_info.txt
+        echo "Commit message: $COMMIT_MESSAGE" >> commit_info.txt
 
-    - name: Display commit message
-      run: cat commit_message.txt
+    - name: Display commit information
+      run: cat commit_info.txt
 
     - name: Create build artifact
       run: |
         echo "Mock build complete."
-        mv commit_message.txt file_build.txt
+        mv commit_info.txt file_build.txt
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
