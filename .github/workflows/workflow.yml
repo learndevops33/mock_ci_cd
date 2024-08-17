@@ -7,9 +7,11 @@ on:
       - 'release/*'
       - main
   pull_request:
+    types: 
+      - closed
     branches:
       - 'release/*'
-      # - main
+      - main
 
 jobs:
   build:
