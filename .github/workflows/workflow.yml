@@ -1,4 +1,4 @@
-name: CI/CD
+name: mock CI/CD
  
 on:
   push:
