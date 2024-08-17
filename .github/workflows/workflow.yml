@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - 'feature/*'
-  pull_request:
-    types: [closed]
-    branches:
+  pull_request: 
+    branches: 
       - 'release/*'
 
 jobs:
