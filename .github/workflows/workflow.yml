@@ -64,3 +64,12 @@ jobs:
       with:
         name: deploy
         path: file_deploy.txt
+  build_deploy_status:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Deployment Status
+      run: |
+        echo "Deployment is successful"
+      shell: bash
+ 
