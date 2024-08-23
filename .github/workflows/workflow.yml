@@ -58,7 +58,8 @@ jobs:
 
     - name: Rename build artifact
       run: mv file_build.txt file_deploy.txt
-
+    - name: sleep for 1 minute
+      run: sleep 60
     - name: Upload deploy artifact
       uses: actions/upload-artifact@v3
       with:
