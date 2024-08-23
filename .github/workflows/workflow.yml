@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - 'feature/*'
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - 'release/*'
+      - main
   pull_request:
     types: 
       - closed
