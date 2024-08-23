@@ -6,7 +6,8 @@ on:
       - 'feature/*'
   pull_request:
     types: 
-      - closed
+      - synchronize
+      - open
     branches:
       - 'release/*'
       - main
